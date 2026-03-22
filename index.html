@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasneem Firdhosh — AI Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0a0a0f;--bg2:#111118;--bg3:#16161f;
+    --accent:#6c63ff;--accent2:#a78bfa;--accent3:#38bdf8;
+    --text:#f0f0f8;--muted:#8888aa;
+    --border:rgba(108,99,255,0.15);--card:rgba(22,22,31,0.9);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+  .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .nav-links{display:flex;gap:2.5rem;list-style:none}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:0.9rem;transition:color 0.2s}
+  .nav-links a:hover{color:var(--text)}
+  .btn-primary{padding:0.8rem 2rem;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:500;cursor:pointer;text-decoration:none;transition:opacity 0.2s,transform 0.2s;display:inline-block}
+  .btn-primary:hover{opacity:0.85;transform:translateY(-2px)}
+  .btn-secondary{padding:0.8rem 2rem;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.95rem;cursor:pointer;text-decoration:none;transition:border-color 0.2s,transform 0.2s;display:inline-block}
+  .btn-secondary:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 4rem 4rem;position:relative;overflow:hidden}
+  .hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(108,99,255,0.12) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+  .hero-glow2{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(56,189,248,0.08) 0%,transparent 70%);top:20%;right:10%;pointer-events:none}
+  .hero-content{position:relative;z-index:1;max-width:800px}
+  .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:100px;padding:0.4rem 1rem;font-size:0.8rem;color:var(--accent2);margin-bottom:1.5rem;animation:fadeUp 0.6s ease both}
+  .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px #22c55e;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+  .hero h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.5rem;animation:fadeUp 0.6s 0.1s ease both}
+  .hero h1 span{background:linear-gradient(135deg,var(--accent) 0%,var(--accent3) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .hero-sub{font-size:clamp(1rem,2vw,1.25rem);color:var(--muted);font-weight:300;margin-bottom:1.5rem;max-width:560px;animation:fadeUp 0.6s 0.2s ease both}
+  .hero-desc{font-size:1rem;color:var(--muted);max-width:560px;margin-bottom:2.5rem;line-height:1.8;animation:fadeUp 0.6s 0.3s ease both}
+  .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.6s 0.4s ease both}
+  .hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);animation:fadeUp 0.6s 0.5s ease both;flex-wrap:wrap}
+  .stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .stat-label{font-size:0.8rem;color:var(--muted);margin-top:0.2rem}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  section{padding:6rem 4rem;position:relative;z-index:1}
+  .section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem}
+  .section-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:1rem}
+  .section-desc{color:var(--muted);max-width:540px;margin-bottom:3rem;font-size:1rem;line-height:1.8}
+  #skills{background:var(--bg2)}
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+  .skill-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color 0.2s,transform 0.2s}
+  .skill-card:hover{border-color:rgba(108,99,255,0.4);transform:translateY(-3px)}
+  .skill-card-icon{font-size:1.5rem;margin-bottom:0.75rem}
+  .skill-card-title{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:0.75rem;color:var(--text)}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+  .skill-tag{font-size:0.75rem;padding:0.25rem 0.65rem;border-radius:100px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.2);color:var(--accent2);white-space:nowrap}
+  #projects{background:var(--bg)}
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem}
+  .project-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;transition:border-color 0.2s,transform 0.2s;display:flex;flex-direction:column;gap:1rem}
+  .project-card:hover{border-color:rgba(108,99,255,0.5);transform:translateY(-4px)}
+  .project-card.featured{border-color:rgba(108,99,255,0.3);background:linear-gradient(135deg,rgba(108,99,255,0.05) 0%,rgba(56,189,248,0.03) 100%)}
+  .project-header{display:flex;justify-content:space-between;align-items:flex-start}
+  .project-badge{font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:100px;background:rgba(108,99,255,0.15);color:var(--accent2);border:1px solid rgba(108,99,255,0.25);white-space:nowrap}
+  .project-badge.genai{background:rgba(56,189,248,0.1);color:var(--accent3);border-color:rgba(56,189,248,0.2)}
+  .project-badge.cv{background:rgba(34,197,94,0.1);color:#4ade80;border-color:rgba(34,197,94,0.2)}
+  .project-badge.finance{background:rgba(251,191,36,0.1);color:#fbbf24;border-color:rgba(251,191,36,0.2)}
+  .project-badge.nlp{background:rgba(244,114,182,0.1);color:#f472b6;border-color:rgba(244,114,182,0.2)}
+  .project-badge.analytics{background:rgba(251,146,60,0.1);color:#fb923c;border-color:rgba(251,146,60,0.2)}
+  .project-icon{font-size:1.8rem}
+  .project-name{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);line-height:1.3}
+  .project-desc{font-size:0.875rem;color:var(--muted);line-height:1.7;flex:1}
+  .project-tech{display:flex;flex-wrap:wrap;gap:0.35rem}
+  .tech-pill{font-size:0.7rem;padding:0.2rem 0.55rem;border-radius:4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--muted)}
+  .project-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--accent2);text-decoration:none;font-weight:500;transition:gap 0.2s}
+  .project-link:hover{gap:0.7rem}
+  #about{background:var(--bg2)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .about-text p{color:var(--muted);margin-bottom:1rem;line-height:1.9;font-size:0.95rem}
+  .about-items{display:flex;flex-direction:column;gap:1rem}
+  .about-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.25rem;background:var(--card);border:1px solid var(--border);border-radius:10px}
+  .about-item-icon{font-size:1.2rem;flex-shrink:0;margin-top:0.1rem}
+  .about-item-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;margin-bottom:0.2rem}
+  .about-item-desc{font-size:0.8rem;color:var(--muted);line-height:1.6}
+  #contact{background:var(--bg);text-align:center}
+  .contact-card{max-width:600px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:3rem}
+  .contact-card h3{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:700;margin-bottom:0.75rem}
+  .contact-card p{color:var(--muted);margin-bottom:2rem;font-size:0.95rem}
+  .contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+  .contact-link{display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1.2rem;border:1px solid var(--border);border-radius:8px;color:var(--muted);text-decoration:none;font-size:0.85rem;transition:all 0.2s}
+  .contact-link:hover{border-color:var(--accent);color:var(--text)}
+  footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:0.8rem}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  @media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{display:none}.hero{padding:6rem 1.5rem 3rem}section{padding:4rem 1.5rem}.hero-stats{gap:1.5rem}.about-grid{grid-template-columns:1fr;gap:2rem}.projects-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:0.5rem;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">TF.AI</div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:tasneemfirdhosh2001@gmail.com" class="btn-primary" style="padding:0.5rem 1.2rem;font-size:0.85rem;">Hire Me</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Available for Internships &amp; Freelance</div>
+    <h1>Tasneem<br><span>Firdhosh</span></h1>
+    <p class="hero-sub">AI Engineer &amp; Machine Learning Developer</p>
+    <p class="hero-desc">I build intelligent systems that solve real-world problems — from GenAI chatbots and computer vision platforms to financial risk models and business intelligence dashboards. Based in Salem, Tamil Nadu 🇮🇳</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Projects</a>
+      <a href="https://github.com/Tasneem-Inayath" target="_blank" class="btn-secondary">GitHub Profile</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">8</div><div class="stat-label">AI Projects Built</div></div>
+      <div><div class="stat-num">86%</div><div class="stat-label">MCA Aggregate</div></div>
+      <div><div class="stat-num">10+</div><div class="stat-label">Technologies</div></div>
+      <div><div class="stat-num">0.78</div><div class="stat-label">YOLOv8 mAP@0.5</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="reveal">
+    <div class="section-label">What I Know</div>
+    <h2 class="section-title">Technical Skills</h2>
+    <p class="section-desc">A full-stack AI toolkit — from raw data to deployed intelligent applications.</p>
+  </div>
+  <div class="skills-grid reveal">
+    <div class="skill-card"><div class="skill-card-icon">🧠</div><div class="skill-card-title">Machine Learning</div><div class="skill-tags"><span class="skill-tag">Scikit-learn</span><span class="skill-tag">XGBoost</span><span class="skill-tag">Random Forest</span><span class="skill-tag">Gradient Boosting</span><span class="skill-tag">K-Means</span><span class="skill-tag">SMOTE</span><span class="skill-tag">MLflow</span></div></div>
+    <div class="skill-card"><div class="skill-card-icon">👁️</div><div class="skill-card-title">Deep Learning &amp; Computer Vision</div><div class="skill-tags"><span class="skill-tag">TensorFlow</span><span class="skill-tag">PyTorch</span><span class="skill-tag">YOLOv8</span><span class="skill-tag">MobileNetV2</span><span class="skill-tag">VGG16</span><span class="skill-tag">ResNet50</span><span class="skill-tag">OpenCV</span></div></div>
+    <div class="skill-card"><div class="skill-card-icon">🤖</div><div class="skill-card-title">Generative AI &amp; NLP</div><div class="skill-tags"><span class="skill-tag">RAG Pipeline</span><span class="skill-tag">Groq LLaMA-3</span><span class="skill-tag">Sentence Transformers</span><span class="skill-tag">TF-IDF</span><span class="skill-tag">FastAPI</span><span class="skill-tag">LLMs</span></div></div>
+    <div class="skill-card"><div class="skill-card-icon">📊</div><div class="skill-card-title">Data &amp; Visualization</div><div class="skill-tags"><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Plotly</span><span class="skill-tag">Power BI</span><span class="skill-tag">EDA</span></div></div>
+    <div class="skill-card"><div class="skill-card-icon">🗄️</div><div class="skill-card-title">Databases &amp; Backend</div><div class="skill-tags"><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">SQLite</span><span class="skill-tag">SQL CTEs</span><span class="skill-tag">Python</span><span class="skill-tag">REST APIs</span></div></div>
+    <div class="skill-card"><div class="skill-card-icon">🚀</div><div class="skill-card-title">Deployment &amp; Tools</div><div class="skill-tags"><span class="skill-tag">Streamlit</span><span class="skill-tag">Hugging Face</span><span class="skill-tag">FastAPI</span><span class="skill-tag">GitHub</span><span class="skill-tag">Jupyter</span><span class="skill-tag">Uvicorn</span></div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="reveal">
+    <div class="section-label">What I've Built</div>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-desc">8 real-world AI projects — from concept to deployed application.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card featured reveal"><div class="project-header"><div class="project-icon">🛒</div><span class="project-badge genai">GenAI + RAG</span></div><div class="project-name">AI-Powered Blinkit Business Decision Platform</div><div class="project-desc">4-layer business intelligence platform combining SQL data engineering, analytics dashboard, ML delivery delay predictor, and RAG-powered GenAI assistant using Groq LLaMA-3.</div><div class="project-tech"><span class="tech-pill">PostgreSQL</span><span class="tech-pill">RAG</span><span class="tech-pill">LLaMA-3</span><span class="tech-pill">Random Forest</span><span class="tech-pill">Streamlit</span></div><a href="https://github.com/Tasneem-Inayath/AI-Powered-Blinkit-Business-Decision-Platform" target="_blank" class="project-link">View on GitHub →</a></div>
+    <div class="project-card featured reveal"><div class="project-header"><div class="project-icon">👁️</div><span class="project-badge cv">Computer Vision</span></div><div class="project-name">SmartVision AI — Object Recognition System</div><div class="project-desc">Hybrid CV pipeline: CNN classification (MobileNetV2 59%) + YOLOv8 object detection (mAP@0.5 = 0.78) across 25 COCO classes. Deployed on Hugging Face Spaces.</div><div class="project-tech"><span class="tech-pill">YOLOv8</span><span class="tech-pill">TensorFlow</span><span class="tech-pill">PyTorch</span><span class="tech-pill">OpenCV</span><span class="tech-pill">Streamlit</span></div><a href="https://github.com/Tasneem-Inayath/SmartVision-AI-" target="_blank" class="project-link">View on GitHub →</a></div>
+    <div class="project-card reveal"><div class="project-header"><div class="project-icon">💚</div><span class="project-badge nlp">NLP + FastAPI</span></div><div class="project-name">Emotion-to-Action AI</div><div class="project-desc">3-layer emotion intelligence system: XGBoost classifier, rule-based decision engine, and guidance layer. FastAPI backend + Streamlit chatbot UI.</div><div class="project-tech"><span class="tech-pill">XGBoost</span><span class="tech-pill">TF-IDF</span><span class="tech-pill">FastAPI</span><span class="tech-pill">Streamlit</span></div><a href="https://github.com/Tasneem-Inayath/Emotion-to-Action-AI" target="_blank" class="project-link">View on GitHub →</a></div>
+    <div class="project-card reveal"><div class="project-header"><div class="project-icon">💰</div><span class="project-badge finance">FinTech + MLOps</span></div><div class="project-name">EMIPredict AI — Financial Risk Platform</div><div class="project-desc">Dual-model EMI eligibility + max loan prediction using XGBoost and Random Forest with full MLflow experiment tracking and SMOTE for imbalance handling.</div><div class="project-tech"><span class="tech-pill">XGBoost</span><span class="tech-pill">MLflow</span><span class="tech-pill">SMOTE</span><span class="tech-pill">Streamlit</span></div><a href="https://github.com/Tasneem-Inayath/EMIPredict-AI---Intelligent-Financial-Risk-Assessment-Platform" target="_blank" class="project-link">View on GitHub →</a></div>
+    <div class="project-card reveal"><div class="project-header"><div class="project-icon">📈</div><span class="project-badge finance">Finance + Clustering</span></div><div class="project-name">Trader Behavior Analysis</div><div class="project-desc">Crypto trading data analyzed with Fear &amp; Greed Index. K-Means clustering segments traders into conservative, moderate, and aggressive risk profiles.</div><div class="project-tech"><span class="tech-pill">K-Means</span><span class="tech-pill">Pandas</span><span class="tech-pill">Seaborn</span><span class="tech-pill">Scikit-learn</span></div><a href="https://github.com/Tasneem-Inayath/trader-behavior-analysis" target="_blank" class="project-link">View on GitHub →</a></div>
+    <div class="project-card reveal"><div class="project-header"><div class="project-icon">🚔</div><span class="project-badge analytics">Crime Analytics</span></div><div class="project-name">PatrolIQ — Smart Safety Platform</div><div class="project-desc">Urban crime intelligence platform using K-Means clustering to identify hotspots and generate data-driven patrol recommendations for law enforcement.</div><div class="project-tech"><span class="tech-pill">K-Means</span><span class="tech-pill">Scikit-learn</span><span class="tech-pill">Matplotlib</span><span class="tech-pill">Pandas</span></div><a href="https://github.com/Tasneem-Inayath/PatrolIQ---Smart-Safety-Analytics-Platform" target="_blank" class="project-link">View on GitHub →</a></div>
+    <div class="project-card reveal"><div class="project-header"><div class="project-icon">🏏</div><span class="project-badge analytics">SQL + Real-Time</span></div><div class="project-name">Cricbuzz LiveStats Dashboard</div><div class="project-desc">Real-time cricket analytics with live API data, MySQL, full CRUD operations, and complex SQL analytics across a 5-page Streamlit application.</div><div class="project-tech"><span class="tech-pill">MySQL</span><span class="tech-pill">SQL</span><span class="tech-pill">Streamlit</span><span class="tech-pill">Pandas</span></div><a href="https://github.com/Tasneem-Inayath/-Cricbuzz-LiveStats-Real-Time-Cricket-Insights-SQL-Based-Analytics" target="_blank" class="project-link">View on GitHub →</a></div>
+    <div class="project-card reveal"><div class="project-header"><div class="project-icon">🛍️</div><span class="project-badge analytics">Power BI</span></div><div class="project-name">Amazon India Sales Analytics</div><div class="project-desc">Interactive Power BI dashboard analyzing Amazon India sales trends, customer retention, and revenue performance with KPI cards and segment breakdowns.</div><div class="project-tech"><span class="tech-pill">Power BI</span><span class="tech-pill">Data Visualization</span><span class="tech-pill">Business Intelligence</span></div><a href="https://github.com/Tasneem-Inayath/amazon-india-sales-analytics" target="_blank" class="project-link">View on GitHub →</a></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <div class="section-label">Who I Am</div>
+      <h2 class="section-title">About Me</h2>
+      <p>Hi! I'm Tasneem Firdhosh, an AI Engineer and Machine Learning Developer from Salem, Tamil Nadu, India.</p>
+      <p>I graduated with an MCA (86%) from Sona College of Technology and completed an intensive AI &amp; ML program with HCL GUVI — IIT Madras Incubated.</p>
+      <p>I'm passionate about building AI systems that solve real problems — every project goes from raw data all the way to a deployed application.</p>
+      <p>Currently open to remote AI/ML internships and entry-level roles in India and internationally.</p>
+      <div style="margin-top:1.5rem"><a href="mailto:tasneemfirdhosh2001@gmail.com" class="btn-primary">Get In Touch</a></div>
+    </div>
+    <div class="about-items reveal">
+      <div class="about-item"><div class="about-item-icon">🎓</div><div><div class="about-item-title">MCA — Sona College of Technology</div><div class="about-item-desc">Master of Computer Applications · Salem · 2023 · 86%</div></div></div>
+      <div class="about-item"><div class="about-item-icon">🏆</div><div><div class="about-item-title">AI &amp; ML Certified Professional</div><div class="about-item-desc">HCL GUVI — IIT Madras Incubated Program · 2026</div></div></div>
+      <div class="about-item"><div class="about-item-icon">🥇</div><div><div class="about-item-title">Rashtrapati Award</div><div class="about-item-desc">National Level President's Award · Bharat Scouts and Guides · 2015</div></div></div>
+      <div class="about-item"><div class="about-item-icon">💡</div><div><div class="about-item-title">National Hackathon Participant</div><div class="about-item-desc">Digital Petitions App · SRIIH Hackathon · 2021</div></div></div>
+      <div class="about-item"><div class="about-item-icon">📍</div><div><div class="about-item-title">Salem, Tamil Nadu, India</div><div class="about-item-desc">Open to remote work · India &amp; International</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-card reveal">
+    <h3>Let's Work Together</h3>
+    <p>Open to AI/ML internships, freelance projects, and entry-level roles. Let's build something intelligent!</p>
+    <a href="mailto:tasneemfirdhosh2001@gmail.com" class="btn-primary">tasneemfirdhosh2001@gmail.com</a>
+    <div class="contact-links">
+      <a href="https://github.com/Tasneem-Inayath" target="_blank" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/tasneem-firdhosh-aba9b216b" target="_blank" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="tel:+919442883169" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +91 9442883169
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Tasneem Firdhosh. Built with passion for AI.</span>
+  <span>Salem, Tamil Nadu, India 🇮🇳</span>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id'); });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : ''; });
+  });
+</script>
+</body>
+</html>
